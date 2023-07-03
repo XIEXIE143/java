@@ -6,7 +6,8 @@ public class CounterThread implements Runnable {
     public long interval = 1000;
 
     @Override
-    public void run() {
+    synchronized public void run() {
+        // synchronized (count) {
         while (count > 0) {
             try {
                 Thread.sleep(interval);
@@ -17,6 +18,9 @@ public class CounterThread implements Runnable {
                 e.printStackTrace();
             }
         }
+        count = 5;
+        System.out.println("--- thread end. ---");
+        // }
     }
 
 }
