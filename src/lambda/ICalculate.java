@@ -1,5 +1,5 @@
 package lambda;
 
-public class ICalculate {
-    
+public interface ICalculate {
+    public Integer totalPrice(Integer price);    
 }
