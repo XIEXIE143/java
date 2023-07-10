@@ -13,10 +13,11 @@ public class DateTimerApp {
     public static void main(String[] args) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2023);
+        //Monthは「-1」する
         calendar.set(Calendar.MONTH, 6);
         calendar.set(Calendar.DATE, 3);
-        calendar.set(Calendar.HOUR_OF_DAY, 12);
-        calendar.set(Calendar.MINUTE, 14);
+        calendar.set(Calendar.HOUR_OF_DAY, 13);
+        calendar.set(Calendar.MINUTE, 10);
         calendar.set(Calendar.SECOND, 0);
 
         Date scheduledTime = calendar.getTime();
@@ -27,7 +28,7 @@ public class DateTimerApp {
             public void run() {
                 System.out.println("タイマーが実行されました。");
                 count++;
-                if (count > maxCount){
+                if (count > maxCount) {
                     timer.cancel();
                     System.out.println("終了");
                 }
